@@ -2,6 +2,7 @@
 
 ## Run
 > cd PaymentGateway
+
 > docker compose up
 
 ## Check mapped http ports
