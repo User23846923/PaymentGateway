@@ -4,15 +4,16 @@
 > cd PaymentGateway
 > docker compose up
 
-## Check mapped https ports
+## Check mapped http ports
 > docker ps
-
-CONTAINER ID   IMAGE                COMMAND                  CREATED              STATUS              PORTS                                           NAMES
-d271f364bbaa   acquiringbank        "dotnet AcquiringBan…"   About a minute ago   Up About a minute   0.0.0.0:50677->80/tcp, 0.0.0.0:50676->443/tcp   paymentgateway-acquiringbank-1
-21670d69f0ac   paymentgateway       "dotnet PaymentGatew…"   About a minute ago   Up About a minute   0.0.0.0:50675->80/tcp, 0.0.0.0:50674->443/tcp   paymentgateway-paymentgateway-1
+```
+CONTAINER ID   IMAGE                COMMAND               CREATED              STATUS              PORTS                  NAMES
+30d850da455b   acquiringbank:dev    "tail -f /dev/null"   About a minute ago   Up About a minute   0.0.0.0:5001->80/tcp   AcquiringBank
+e2e476ae15e1   paymentgateway:dev   "tail -f /dev/null"   About a minute ago   Up About a minute   0.0.0.0:5000->80/tcp   PaymentGateway
+```
 
 ## Test Acquiring Bank
-https://localhost:<port>/swagger/index.html
+http://localhost:5001/swagger/index.html
 
 ## Test Payment Gateway
-https://localhost:<port>/swagger/index.html
+http://localhost:5000/swagger/index.html
