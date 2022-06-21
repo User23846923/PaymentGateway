@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  paymentgateway:
+    image: ${DOCKER_REGISTRY-}paymentgateway
+    build:
+      context: .
+      dockerfile: PaymentGateway/Dockerfile
+
+  acquiringbank:
+    image: ${DOCKER_REGISTRY-}acquiringbank
+    build:
+      context: .
+      dockerfile: AcquiringBank/Dockerfile
