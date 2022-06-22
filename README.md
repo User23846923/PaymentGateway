@@ -1,18 +1,17 @@
 # PaymentGateway
 
-
-## Get it
+## Clone it
 > git clone https://github.com/User23846923/PaymentGateway.git
 
 > cd PaymentGateway
 
 
 ## Run with Docker
-> cd PaymentGateway
-
 > docker compose up
 
 > docker ps
+
+should show e.g. 
 ```
 CONTAINER ID   IMAGE                COMMAND               CREATED              STATUS              PORTS                  NAMES
 30d850da455b   acquiringbank:dev    "tail -f /dev/null"   About a minute ago   Up About a minute   0.0.0.0:5001->80/tcp   AcquiringBank
