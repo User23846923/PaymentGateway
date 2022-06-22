@@ -23,11 +23,11 @@ e2e476ae15e1   paymentgateway:dev   "tail -f /dev/null"   About a minute ago   U
 
 > cd AcquiringBank
 
-> dotnet run bin\Debug\net6.0\AcquiringBank.dll --port 5001
+> dotnet run --urls=http://localhost:5001 bin\Debug\net6.0\AcquiringBank.dll
 
 > cd PaymentGateway
 
-> dotnet run bin\Debug\net6.0\PaymentGateway.dll --port 5000
+> dotnet run --urls=http://loclhost:5000 bin\Debug\net6.0\PaymentGateway.dll
 
 
 ## Test Acquiring Bank
