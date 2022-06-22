@@ -7,13 +7,14 @@ namespace PaymentGateway.Controllers
     [ApiController]
     public class TestController : ControllerBase
     {
-        [HttpGet]
-        public async Task<string> TestGet()
+        [HttpGet("{index}")]
+        public async Task<string> TestGet(int index)
         {
             using var client = new HttpClient();
-            var request = new HttpRequestMessage();
-
-            request.RequestUri = new Uri("http://acquiringbank/api/Names/1");
+            var request = new HttpRequestMessage
+            {
+                RequestUri = new Uri($"http://acquiringbank/api/Names/{index}")
+            };
             var response = await client.SendAsync(request);
             var name = await response.Content.ReadAsStringAsync();
             return name;
