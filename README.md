@@ -1,6 +1,6 @@
 # PaymentGateway
 
-## Run
+## Run with Docker
 > cd PaymentGateway
 
 > docker compose up
@@ -18,3 +18,14 @@ http://localhost:5001/swagger/index.html
 
 ## Test Payment Gateway
 http://localhost:5000/swagger/index.html
+
+
+## Run on Command Prompt
+
+> cd AcquiringBank
+
+> dotnet run bin\Debug\net6.0\AcquiringBank.dll --port 5001
+
+> cd PaymentGateway
+
+> dotnet run bin\Debug\net6.0\PaymentGateway.dll --port 5000
