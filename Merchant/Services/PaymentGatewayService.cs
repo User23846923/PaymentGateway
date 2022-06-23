@@ -1,4 +1,4 @@
-﻿namespace Website.Data
+﻿namespace Merchant.Services
 {
     public class PaymentGatewayService
     {

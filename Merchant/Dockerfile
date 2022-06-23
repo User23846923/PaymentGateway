@@ -3,19 +3,20 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
+EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Website/Website.csproj", "Website/"]
-RUN dotnet restore "Website/Website.csproj"
+COPY ["Merchant/Merchant.csproj", "Merchant/"]
+RUN dotnet restore "Merchant/Merchant.csproj"
 COPY . .
-WORKDIR "/src/Website"
-RUN dotnet build "Website.csproj" -c Release -o /app/build
+WORKDIR "/src/Merchant"
+RUN dotnet build "Merchant.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Website.csproj" -c Release -o /app/publish
+RUN dotnet publish "Merchant.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Website.dll"]
+ENTRYPOINT ["dotnet", "Merchant.dll"]

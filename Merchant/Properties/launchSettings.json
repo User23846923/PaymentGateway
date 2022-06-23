@@ -3,26 +3,33 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:39300",
-      "sslPort": 44358
+      "applicationUrl": "http://localhost:21487",
+      "sslPort": 44331
     }
   },
   "profiles": {
-    "Website": {
+    "Merchant": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
-      "applicationUrl": "https://localhost:7177;http://localhost:5177",
+      "applicationUrl": "https://localhost:7095;http://localhost:5095",
       "dotnetRunMessages": true
+    },
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
     },
     "Docker": {
       "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "publishAllPorts": true,
-      "useSSL": false
+      "useSSL": true
     }
   }
 }

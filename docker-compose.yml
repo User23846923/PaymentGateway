@@ -13,9 +13,9 @@ services:
       context: .
       dockerfile: AcquiringBank/Dockerfile
 
-  website:
-    image: ${DOCKER_REGISTRY-}website
+  merchant:
+    image: ${DOCKER_REGISTRY-}merchant
     build:
       context: .
-      dockerfile: Website/Dockerfile
+      dockerfile: Merchant/Dockerfile
 
