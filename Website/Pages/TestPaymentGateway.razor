@@ -1,0 +1,28 @@
+﻿@page "/test"
+@using Website.Data
+
+<PageTitle>TestPaymentGateway</PageTitle>
+
+<h3>TestPaymentGateway</h3>
+
+<input type="number" @bind="index" />
+<button class="btn btn-primary" @onclick="Test">Test</button>
+
+<p>Name: @Name</p>
+
+@code {
+	private string? index;
+	private string Name = "";
+
+	private async Task Test()
+	{
+		var paymentGatewayService = new PaymentGatewayService();
+
+		Name = "";
+		var isNumber = int.TryParse(index, out int value);
+		if (isNumber)
+		{
+			Name = await paymentGatewayService.TestGet(value);
+		}
+	}
+}

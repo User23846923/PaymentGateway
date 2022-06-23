@@ -12,3 +12,10 @@ services:
     build:
       context: .
       dockerfile: AcquiringBank/Dockerfile
+
+  website:
+    image: ${DOCKER_REGISTRY-}website
+    build:
+      context: .
+      dockerfile: Website/Dockerfile
+
